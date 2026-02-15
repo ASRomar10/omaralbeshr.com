@@ -1,0 +1,179 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About — Omar AlBeshr',
+  description: 'Omar AlBeshr is an Emirati author, filmmaker, and photographer based in Abu Dhabi. Published author of "Taintlessness" and multi-disciplinary creative working in Arabic and English.',
+  openGraph: {
+    title: 'About — Omar AlBeshr',
+    description: 'Omar AlBeshr is an Emirati author, filmmaker, and photographer based in Abu Dhabi.',
+  },
+}
+
+export default function AboutPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Omar AlBeshr',
+    url: 'https://omaralbeshr.com',
+    jobTitle: 'Author, Filmmaker, Photographer',
+    description: 'Emirati author, filmmaker, and photographer based in Abu Dhabi',
+    sameAs: [
+      'https://www.linkedin.com/in/omaralbeshr',
+      'https://500px.com/omaralbeshr',
+      'https://www.facebook.com/omaralbeshr',
+    ],
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <div className="min-h-screen bg-omar-bg">
+        {/* Hero Section */}
+        <section className="py-16 md:py-24">
+          <div className="container mx-auto px-6 max-w-5xl">
+            <div className="flex flex-col md:flex-row items-center gap-12">
+              {/* Portrait */}
+              <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+                <div className="w-full h-full rounded-full bg-omar-sand/20 border-4 border-omar-sand overflow-hidden">
+                  {/* Placeholder for portrait - can be replaced with actual image */}
+                  <div className="w-full h-full flex items-center justify-center text-omar-oud/30 font-heading text-6xl">
+                    OA
+                  </div>
+                </div>
+              </div>
+
+              {/* Heading */}
+              <div className="text-center md:text-left">
+                <h1 className="font-heading text-5xl md:text-6xl text-omar-oud mb-4">
+                  About Omar
+                </h1>
+                <p className="font-body text-xl text-omar-charcoal/70">
+                  Author, Filmmaker, Photographer
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Biography */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6 max-w-3xl">
+            <div className="prose prose-lg max-w-none">
+              <p className="font-body text-lg text-omar-charcoal leading-relaxed mb-6">
+                Omar AlBeshr is an Emirati author, filmmaker, and photographer based in Abu Dhabi. His creative practice spans multiple disciplines, unified by a commitment to exploring the human experience through visual and written storytelling.
+              </p>
+
+              <p className="font-body text-lg text-omar-charcoal leading-relaxed mb-6">
+                In 2020, Omar published his debut work, <em>Taintlessness</em>, through Sail Publishing. The book reflects his introspective approach to narrative and his ability to navigate complex emotional landscapes with clarity and grace.
+              </p>
+
+              <p className="font-body text-lg text-omar-charcoal leading-relaxed mb-6">
+                Working fluently in both Arabic and English, Omar brings a bilingual perspective to his creative output. His photography has been featured on platforms such as 500px, where he captures moments that reveal the quiet beauty found in everyday life.
+              </p>
+
+              <p className="font-body text-lg text-omar-charcoal leading-relaxed">
+                Based in the cultural heart of the UAE, Omar continues to develop his craft across writing, film, and photography, seeking always to create work that resonates with authenticity and purpose.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Journey / Timeline */}
+        <section className="py-16">
+          <div className="container mx-auto px-6 max-w-3xl">
+            <h2 className="font-heading text-4xl text-omar-oud mb-12 text-center">
+              Journey
+            </h2>
+
+            <div className="space-y-8">
+              <div className="border-l-4 border-omar-sand pl-6 py-2">
+                <div className="font-heading text-lg text-omar-sand mb-2">2020</div>
+                <h3 className="font-heading text-xl text-omar-oud mb-2">Published Taintlessness</h3>
+                <p className="font-body text-omar-charcoal/80">
+                  Debut publication with Sail Publishing, marking a significant milestone in literary work.
+                </p>
+              </div>
+
+              <div className="border-l-4 border-omar-sand pl-6 py-2">
+                <div className="font-heading text-lg text-omar-sand mb-2">Ongoing</div>
+                <h3 className="font-heading text-xl text-omar-oud mb-2">Multi-Disciplinary Practice</h3>
+                <p className="font-body text-omar-charcoal/80">
+                  Developing creative work across photography, filmmaking, and writing, exploring the intersections between visual and narrative storytelling.
+                </p>
+              </div>
+
+              <div className="border-l-4 border-omar-sand pl-6 py-2">
+                <div className="font-heading text-lg text-omar-sand mb-2">Present</div>
+                <h3 className="font-heading text-xl text-omar-oud mb-2">Based in Abu Dhabi</h3>
+                <p className="font-body text-omar-charcoal/80">
+                  Creating from the UAE's cultural capital, contributing to the region's growing creative landscape.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Social Links */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6 max-w-3xl text-center">
+            <h2 className="font-heading text-4xl text-omar-oud mb-8">
+              Connect
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-6">
+              <a
+                href="https://www.linkedin.com/in/omaralbeshr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-omar-oud text-white font-body rounded-lg hover:bg-omar-charcoal transition-colors"
+              >
+                <span>LinkedIn</span>
+              </a>
+
+              <a
+                href="https://500px.com/omaralbeshr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-omar-oud text-white font-body rounded-lg hover:bg-omar-charcoal transition-colors"
+              >
+                <span>500px</span>
+              </a>
+
+              <a
+                href="https://www.facebook.com/omaralbeshr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-omar-oud text-white font-body rounded-lg hover:bg-omar-charcoal transition-colors"
+              >
+                <span>Facebook</span>
+              </a>
+            </div>
+
+            <p className="font-body text-omar-charcoal/70 mt-8 max-w-2xl mx-auto">
+              I welcome opportunities to collaborate, discuss creative work, or simply connect with fellow storytellers and artists.
+            </p>
+          </div>
+        </section>
+
+        {/* Press Mentions */}
+        <section className="py-16">
+          <div className="container mx-auto px-6 max-w-3xl">
+            <h2 className="font-heading text-4xl text-omar-oud mb-8 text-center">
+              Press & Features
+            </h2>
+
+            <div className="text-center py-12 bg-white rounded-lg">
+              <p className="font-body text-omar-charcoal/60 italic">
+                Press mentions and features will be showcased here.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  )
+}
