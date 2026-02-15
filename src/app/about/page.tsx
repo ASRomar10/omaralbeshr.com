@@ -19,7 +19,6 @@ export default function AboutPage() {
     description: 'Emirati author and photographer based in Abu Dhabi',
     sameAs: [
       'https://www.linkedin.com/in/omaralbeshr',
-      'https://500px.com/omaralbeshr',
       'https://www.facebook.com/omaralbeshr',
     ],
   }
@@ -72,7 +71,7 @@ export default function AboutPage() {
               </p>
 
               <p className="font-body text-lg text-omar-charcoal leading-relaxed mb-6">
-                Working fluently in both Arabic and English, Omar brings a bilingual perspective to his creative output. His photography has been featured on platforms such as 500px, where he captures moments that reveal the quiet beauty found in everyday life.
+                Working fluently in both Arabic and English, Omar brings a bilingual perspective to his creative output. His photography captures moments that reveal the quiet beauty found in everyday life.
               </p>
 
               <p className="font-body text-lg text-omar-charcoal leading-relaxed">
@@ -134,14 +133,6 @@ export default function AboutPage() {
                 <span>LinkedIn</span>
               </a>
 
-              <a
-                href="https://500px.com/omaralbeshr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-omar-oud text-white font-body rounded-lg hover:bg-omar-charcoal transition-colors"
-              >
-                <span>500px</span>
-              </a>
 
               <a
                 href="https://www.facebook.com/omaralbeshr"

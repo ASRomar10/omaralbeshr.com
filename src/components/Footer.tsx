@@ -58,14 +58,6 @@ export default function Footer() {
               >
                 LinkedIn
               </a>
-              <a
-                href="https://500px.com/omaralbeshr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-omar-muted hover:text-omar-sand transition-colors text-sm"
-              >
-                500px
-              </a>
             </div>
           </div>
         </div>
