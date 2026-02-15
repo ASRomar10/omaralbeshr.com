@@ -118,10 +118,10 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
               {book.title}
             </h1>
             <p className="text-lg text-omar-muted">
-              {book.publisher} • {new Date(book.publishDate).toLocaleDateString('en-US', {
+              {book.publisher}{book.publishDate ? ` • ${new Date(book.publishDate).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
-              })}
+              })}` : ''}
             </p>
             {book.genre && (
               <p className="text-omar-sand font-medium mt-2">{book.genre}</p>

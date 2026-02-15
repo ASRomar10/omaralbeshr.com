@@ -55,7 +55,7 @@ export default async function BooksPage() {
                   {book.title}
                 </h2>
                 <p className="text-sm text-omar-muted">
-                  {book.publisher} • {new Date(book.publishDate).getFullYear()}
+                  {book.publisher}{book.publishDate ? ` • ${new Date(book.publishDate).getFullYear()}` : ''}
                 </p>
                 {book.genre && (
                   <p className="text-sm text-omar-sand font-medium">{book.genre}</p>

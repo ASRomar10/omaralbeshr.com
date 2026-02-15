@@ -90,7 +90,7 @@ export default async function Home() {
                   {featuredBook.title}
                 </h3>
                 <p className="text-omar-muted">
-                  {featuredBook.publisher} • {new Date(featuredBook.publishDate).getFullYear()}
+                  {featuredBook.publisher}{featuredBook.publishDate ? ` • ${new Date(featuredBook.publishDate).getFullYear()}` : ''}
                 </p>
               </div>
 
