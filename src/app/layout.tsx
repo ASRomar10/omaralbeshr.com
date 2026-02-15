@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Libre_Baskerville, Inter } from "next/font/google";
 import "./globals.css";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const libreBaskerville = Libre_Baskerville({
   weight: ['400', '700'],
@@ -26,9 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${libreBaskerville.variable} ${inter.variable} antialiased`}
+        className={`${libreBaskerville.variable} ${inter.variable} antialiased bg-omar-bg text-omar-charcoal`}
       >
-        {children}
+        <Navigation />
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
