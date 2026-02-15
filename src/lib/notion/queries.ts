@@ -46,32 +46,8 @@ export async function getBookBySlug(slug: string): Promise<Book | null> {
   if (!isNotionConfigured() || !slug) return null;
 
   try {
-    const response = await notion.dataSources.query({
-      data_source_id: BOOKS_DB_ID,
-      filter: {
-        and: [
-          {
-            property: 'Published',
-            checkbox: {
-              equals: true,
-            },
-          },
-          {
-            property: 'Slug',
-            rich_text: {
-              equals: slug,
-            },
-          },
-        ],
-      },
-    });
-
-    if (response.results.length === 0) return null;
-
-    const page = response.results[0];
-    if (!('properties' in page)) return null;
-
-    return pageToBook(page as PageObjectResponse);
+    const books = await getBooks();
+    return books.find((book) => book.slug === slug) || null;
   } catch (error) {
     console.error('Error fetching book by slug:', error);
     return null;
@@ -180,32 +156,8 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
   if (!isNotionConfigured() || !slug) return null;
 
   try {
-    const response = await notion.dataSources.query({
-      data_source_id: BLOG_DB_ID,
-      filter: {
-        and: [
-          {
-            property: 'Published',
-            checkbox: {
-              equals: true,
-            },
-          },
-          {
-            property: 'Slug',
-            rich_text: {
-              equals: slug,
-            },
-          },
-        ],
-      },
-    });
-
-    if (response.results.length === 0) return null;
-
-    const page = response.results[0];
-    if (!('properties' in page)) return null;
-
-    return pageToBlogPost(page as PageObjectResponse);
+    const posts = await getBlogPosts();
+    return posts.find((post) => post.slug === slug) || null;
   } catch (error) {
     console.error('Error fetching blog post by slug:', error);
     return null;
@@ -232,35 +184,8 @@ export async function getBlogPostsByTag(tag: string): Promise<BlogPost[]> {
   if (!isNotionConfigured() || !tag) return [];
 
   try {
-    const response = await notion.dataSources.query({
-      data_source_id: BLOG_DB_ID,
-      filter: {
-        and: [
-          {
-            property: 'Published',
-            checkbox: {
-              equals: true,
-            },
-          },
-          {
-            property: 'Tags',
-            multi_select: {
-              contains: tag,
-            },
-          },
-        ],
-      },
-      sorts: [
-        {
-          property: 'PublishDate',
-          direction: 'descending',
-        },
-      ],
-    });
-
-    return response.results
-      .filter((page): page is PageObjectResponse => 'properties' in page)
-      .map(pageToBlogPost);
+    const posts = await getBlogPosts();
+    return posts.filter((post) => post.tags.includes(tag));
   } catch (error) {
     console.error('Error fetching blog posts by tag:', error);
     return [];
