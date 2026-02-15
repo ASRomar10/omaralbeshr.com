@@ -58,6 +58,22 @@ export default function Footer() {
               >
                 LinkedIn
               </a>
+              <a
+                href="https://x.com/ASRomar10"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-omar-muted hover:text-omar-sand transition-colors text-sm"
+              >
+                X (Twitter)
+              </a>
+              <a
+                href="https://www.instagram.com/ASRomar10"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-omar-muted hover:text-omar-sand transition-colors text-sm"
+              >
+                Instagram
+              </a>
             </div>
           </div>
         </div>

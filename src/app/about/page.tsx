@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About — Omar AlBeshr',
@@ -19,7 +20,8 @@ export default function AboutPage() {
     description: 'Emirati author and photographer based in Abu Dhabi',
     sameAs: [
       'https://www.linkedin.com/in/omaralbeshr',
-      'https://www.facebook.com/omaralbeshr',
+      'https://x.com/ASRomar10',
+      'https://www.instagram.com/ASRomar10',
     ],
   }
 
@@ -38,10 +40,14 @@ export default function AboutPage() {
               {/* Portrait */}
               <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
                 <div className="w-full h-full rounded-full bg-omar-sand/20 border-4 border-omar-sand overflow-hidden">
-                  {/* Placeholder for portrait - can be replaced with actual image */}
-                  <div className="w-full h-full flex items-center justify-center text-omar-oud/30 font-heading text-6xl">
-                    OA
-                  </div>
+                  <Image
+                    src="/images/omar-portrait.jpeg"
+                    alt="Omar AlBeshr"
+                    width={256}
+                    height={256}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                 </div>
               </div>
 
@@ -135,12 +141,20 @@ export default function AboutPage() {
 
 
               <a
-                href="https://www.facebook.com/omaralbeshr"
+                href="https://x.com/ASRomar10"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-omar-oud text-white font-body rounded-lg hover:bg-omar-charcoal transition-colors"
               >
-                <span>Facebook</span>
+                <span>X (Twitter)</span>
+              </a>
+              <a
+                href="https://www.instagram.com/ASRomar10"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-omar-oud text-white font-body rounded-lg hover:bg-omar-charcoal transition-colors"
+              >
+                <span>Instagram</span>
               </a>
             </div>
 
