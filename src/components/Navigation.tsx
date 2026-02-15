@@ -24,6 +24,12 @@ export default function Navigation() {
               Books
             </Link>
             <Link
+              href="/articles"
+              className="text-omar-charcoal hover:text-omar-sand transition-colors font-medium"
+            >
+              Articles
+            </Link>
+            <Link
               href="/blog"
               className="text-omar-charcoal hover:text-omar-sand transition-colors font-medium"
             >
