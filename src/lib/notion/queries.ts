@@ -77,35 +77,8 @@ export async function getFeaturedBooks(): Promise<Book[]> {
   }
 
   try {
-    const response = await notion.dataSources.query({
-      data_source_id: BOOKS_DB_ID,
-      filter: {
-        and: [
-          {
-            property: 'Published',
-            checkbox: {
-              equals: true,
-            },
-          },
-          {
-            property: 'Featured',
-            checkbox: {
-              equals: true,
-            },
-          },
-        ],
-      },
-      sorts: [
-        {
-          property: 'SortOrder',
-          direction: 'ascending',
-        },
-      ],
-    });
-
-    return response.results
-      .filter((page): page is PageObjectResponse => 'properties' in page)
-      .map(pageToBook);
+    const books = await getBooks();
+    return books.filter((book) => book.featured);
   } catch (error) {
     console.error('Error fetching featured books from Notion:', error);
     return [];

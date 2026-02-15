@@ -15,8 +15,9 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for SEO
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const book = await getBookBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const book = await getBookBySlug(slug);
 
   if (!book) {
     return {
@@ -35,8 +36,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function BookDetailPage({ params }: { params: { slug: string } }) {
-  const book = await getBookBySlug(params.slug);
+export default async function BookDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const book = await getBookBySlug(slug);
 
   if (!book) {
     notFound();
