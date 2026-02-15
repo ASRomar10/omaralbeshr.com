@@ -162,7 +162,7 @@ export default async function BookDetailPage({ params }: { params: { slug: strin
       {blocks.length > 0 && (
         <div className="max-w-4xl mx-auto">
           <div className="prose prose-lg max-w-none">
-            <NotionRenderer blocks={blocks} />
+            <NotionRenderer blocks={blocks as any} />
           </div>
         </div>
       )}
@@ -176,6 +176,7 @@ export default async function BookDetailPage({ params }: { params: { slug: strin
           Explore More Books
         </Link>
       </div>
+    </div>
     </>
   );
 }

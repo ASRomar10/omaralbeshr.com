@@ -193,6 +193,7 @@ export default async function Home() {
           More About Omar
         </Link>
       </section>
+    </div>
     </>
   );
 }

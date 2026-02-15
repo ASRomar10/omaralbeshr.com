@@ -52,7 +52,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     description: post.excerpt,
     image: post.coverImage,
     datePublished: post.publishDate,
-    dateModified: post.updatedAt || post.publishDate,
+    dateModified: post.publishDate,
     author: {
       '@type': 'Person',
       name: 'Omar AlBeshr',
@@ -145,7 +145,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
       {/* Post Content */}
       <div className="prose prose-lg max-w-none">
-        <NotionRenderer blocks={blocks} />
+        <NotionRenderer blocks={blocks as any} />
       </div>
 
       {/* Post Footer */}
@@ -210,6 +210,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </div>
         </div>
       </footer>
+    </article>
     </>
   );
 }

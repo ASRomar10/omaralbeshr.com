@@ -36,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const books = await getBooks()
   const bookRoutes: MetadataRoute.Sitemap = books.map((book) => ({
     url: `${baseUrl}/books/${book.slug}`,
-    lastModified: new Date(book.updatedAt || book.createdAt),
+    lastModified: new Date(book.publishDate),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
@@ -45,7 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getBlogPosts()
   const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.updatedAt || post.createdAt),
+    lastModified: new Date(post.publishDate),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }))
