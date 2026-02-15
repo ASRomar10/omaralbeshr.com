@@ -96,6 +96,14 @@ export default function AboutPage() {
 
             <div className="space-y-8">
               <div className="border-l-4 border-omar-sand pl-6 py-2">
+                <div className="font-heading text-lg text-omar-sand mb-2">2015–2020</div>
+                <h3 className="font-heading text-xl text-omar-oud mb-2">Sail Magazine</h3>
+                <p className="font-body text-omar-charcoal/80">
+                  Published 11 articles covering language, science, psychology, and culture.
+                </p>
+              </div>
+
+              <div className="border-l-4 border-omar-sand pl-6 py-2">
                 <div className="font-heading text-lg text-omar-sand mb-2">2020</div>
                 <h3 className="font-heading text-xl text-omar-oud mb-2">Published Taintlessness</h3>
                 <p className="font-body text-omar-charcoal/80">
@@ -104,10 +112,18 @@ export default function AboutPage() {
               </div>
 
               <div className="border-l-4 border-omar-sand pl-6 py-2">
-                <div className="font-heading text-lg text-omar-sand mb-2">Ongoing</div>
-                <h3 className="font-heading text-xl text-omar-oud mb-2">Multi-Disciplinary Practice</h3>
+                <div className="font-heading text-lg text-omar-sand mb-2">2021</div>
+                <h3 className="font-heading text-xl text-omar-oud mb-2">Fields of Poetry</h3>
                 <p className="font-body text-omar-charcoal/80">
-                  Developing creative work across photography and writing, exploring the intersections between visual and narrative storytelling.
+                  Collaborative poetry anthology featuring diverse voices, published through Sail Publishing.
+                </p>
+              </div>
+
+              <div className="border-l-4 border-omar-sand pl-6 py-2">
+                <div className="font-heading text-lg text-omar-sand mb-2">2023</div>
+                <h3 className="font-heading text-xl text-omar-oud mb-2">Emarat TV Interview</h3>
+                <p className="font-body text-omar-charcoal/80">
+                  Featured on "Morning of the Emirates" discussing poetry and bridging Arabic and English literary traditions.
                 </p>
               </div>
 
@@ -122,8 +138,29 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Social Links */}
+        {/* Interview */}
         <section className="py-16 bg-white">
+          <div className="container mx-auto px-6 max-w-3xl">
+            <h2 className="font-heading text-4xl text-omar-oud mb-8 text-center">
+              Interview
+            </h2>
+            <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.youtube.com/embed/rzkN2Q_PLdM"
+                title="Omar AlBeshr on صباح الإمارات — Emarat TV"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+            <p className="font-body text-omar-charcoal/70 mt-4 text-center">
+              Appearance on Emarat TV's "Morning of the Emirates" (صباح الإمارات) discussing poetry and literature — May 2023
+            </p>
+          </div>
+        </section>
+
+        {/* Social Links */}
+        <section className="py-16">
           <div className="container mx-auto px-6 max-w-3xl text-center">
             <h2 className="font-heading text-4xl text-omar-oud mb-8">
               Connect
@@ -171,10 +208,43 @@ export default function AboutPage() {
               Press & Features
             </h2>
 
-            <div className="text-center py-12 bg-white rounded-lg">
-              <p className="font-body text-omar-charcoal/60 italic">
-                Press mentions and features will be showcased here.
-              </p>
+            <div className="space-y-4">
+              <a
+                href="https://youtu.be/rzkN2Q_PLdM"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-6 bg-white rounded-lg border border-omar-muted/20 hover:border-omar-sand/50 hover:shadow-md transition-all group"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-heading text-lg text-omar-oud group-hover:text-omar-sand transition-colors">
+                      Emarat TV — صباح الإمارات (Morning of the Emirates)
+                    </h3>
+                    <p className="font-body text-omar-charcoal/70 mt-1">
+                      Interview discussing poetry, reading, and bridging Arabic and English literary traditions.
+                    </p>
+                  </div>
+                  <span className="text-sm text-omar-muted whitespace-nowrap">May 2023</span>
+                </div>
+              </a>
+              <a
+                href="https://sailemagazine.com/author/omar-albeshr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-6 bg-white rounded-lg border border-omar-muted/20 hover:border-omar-sand/50 hover:shadow-md transition-all group"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-heading text-lg text-omar-oud group-hover:text-omar-sand transition-colors">
+                      Sail Magazine — Contributing Writer
+                    </h3>
+                    <p className="font-body text-omar-charcoal/70 mt-1">
+                      11 published articles on language, science, psychology, and culture.
+                    </p>
+                  </div>
+                  <span className="text-sm text-omar-muted whitespace-nowrap">2015–2020</span>
+                </div>
+              </a>
             </div>
           </div>
         </section>
