@@ -45,7 +45,7 @@ export default function AboutPage() {
                     alt="Omar AlBeshr"
                     width={256}
                     height={256}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[center_15%]"
                     priority
                   />
                 </div>

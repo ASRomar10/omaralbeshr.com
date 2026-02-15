@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Logo from './Logo';
 
 export default function Navigation() {
   return (
@@ -8,8 +9,9 @@ export default function Navigation() {
           {/* Logo/Name */}
           <Link
             href="/"
-            className="font-heading text-2xl text-omar-oud hover:text-omar-sand transition-colors"
+            className="flex items-center gap-3 font-heading text-2xl text-omar-oud hover:text-omar-sand transition-colors"
           >
+            <Logo className="w-8 h-8" />
             Omar AlBeshr
           </Link>
 
