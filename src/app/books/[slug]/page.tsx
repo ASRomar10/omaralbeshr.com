@@ -141,7 +141,7 @@ export default async function BookDetailPage({ params }: { params: { slug: strin
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-3 bg-omar-sand text-white font-medium rounded-md hover:bg-omar-oud transition-colors"
               >
-                Get Your Copy
+                Buy from Sail Publishing
               </a>
             )}
             {book.otherBuyLinks && (
@@ -151,7 +151,7 @@ export default async function BookDetailPage({ params }: { params: { slug: strin
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-3 border-2 border-omar-sand text-omar-sand font-medium rounded-md hover:bg-omar-sand hover:text-white transition-colors"
               >
-                Other Retailers
+                Buy from Bait Al Tarfeeh
               </a>
             )}
           </div>
