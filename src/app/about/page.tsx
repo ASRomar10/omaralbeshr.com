@@ -146,7 +146,7 @@ export default function AboutPage() {
             </h2>
             <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
               <iframe
-                src="https://www.youtube.com/embed/rzkN2Q_PLdM"
+                src="https://www.youtube.com/embed/rzkN2Q_PLdM?start=5534"
                 title="Omar AlBeshr on صباح الإمارات — Emarat TV"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
