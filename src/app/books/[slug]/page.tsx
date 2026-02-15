@@ -135,14 +135,24 @@ export default async function BookDetailPage({ params }: { params: { slug: strin
           {/* Purchase Links */}
           <div className="flex flex-wrap gap-4 pt-4">
             {book.amazonUrl && (
-              <a
-                href={book.amazonUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-omar-sand text-white font-medium rounded-md hover:bg-omar-oud transition-colors"
-              >
-                Buy from Sail Publishing
-              </a>
+              <>
+                <a
+                  href={book.amazonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-8 py-3 bg-omar-sand text-white font-medium rounded-md hover:bg-omar-oud transition-colors"
+                >
+                  Buy on Amazon
+                </a>
+                <a
+                  href={book.amazonUrl.replace('amazon.com', 'amazon.ae')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-8 py-3 bg-omar-sand text-white font-medium rounded-md hover:bg-omar-oud transition-colors"
+                >
+                  Buy on Amazon.ae
+                </a>
+              </>
             )}
             {book.otherBuyLinks && (
               <a
@@ -151,7 +161,7 @@ export default async function BookDetailPage({ params }: { params: { slug: strin
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-3 border-2 border-omar-sand text-omar-sand font-medium rounded-md hover:bg-omar-sand hover:text-white transition-colors"
               >
-                Buy from Bait Al Tarfeeh
+                Buy from Sail Publishing
               </a>
             )}
           </div>
