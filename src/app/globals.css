@@ -26,4 +26,34 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), sans-serif;
+  position: relative;
+}
+
+/* Subtle gold geometric pattern overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+  background-image:
+    /* Diamond grid */
+    linear-gradient(45deg, var(--color-omar-sand) 1px, transparent 1px),
+    linear-gradient(-45deg, var(--color-omar-sand) 1px, transparent 1px),
+    /* Subtle dots at intersections */
+    radial-gradient(circle, var(--color-omar-sand) 1px, transparent 1px);
+  background-size:
+    60px 60px,
+    60px 60px,
+    30px 30px;
+  background-position:
+    0 0,
+    0 0,
+    15px 15px;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
