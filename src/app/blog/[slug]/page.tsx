@@ -45,8 +45,37 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   // Fetch post content (blocks) for rendering
   const blocks = await getBlogPostContent(post.id);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.coverImage,
+    datePublished: post.publishDate,
+    dateModified: post.updatedAt || post.publishDate,
+    author: {
+      '@type': 'Person',
+      name: 'Omar AlBeshr',
+      url: 'https://omaralbeshr.com/about',
+    },
+    publisher: {
+      '@type': 'Person',
+      name: 'Omar AlBeshr',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://omaralbeshr.com/blog/${post.slug}`,
+    },
+    keywords: post.tags.join(', '),
+  };
+
   return (
-    <article className="max-w-4xl mx-auto px-6 py-16">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <article className="max-w-4xl mx-auto px-6 py-16">
       {/* Back to Blog */}
       <Link
         href="/blog"
@@ -181,6 +210,6 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </div>
         </div>
       </footer>
-    </article>
+    </>
   );
 }

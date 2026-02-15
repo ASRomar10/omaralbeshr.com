@@ -3,7 +3,7 @@
 
 ## 1. Positioning Statement
 
-**Omar AlBeshr is an Emirati author, filmmaker, and photographer based in Abu Dhabi who bridges cultures through bilingual storytelling.** His work spans poetry collections (*Taintlessness*, Sail Publishing 2020), visual narratives, and film, exploring universal themes of love, healing, and human connection through both Arabic and English. He represents a new generation of Gulf creatives who honor traditional poetic forms while embracing contemporary digital storytelling.
+**Omar AlBeshr is an Emirati author and photographer based in Abu Dhabi who bridges cultures through bilingual storytelling.** His work spans poetry collections (*Taintlessness*, Sail Publishing 2020), visual narratives, and film, exploring universal themes of love, healing, and human connection through both Arabic and English. He represents a new generation of Gulf creatives who honor traditional poetic forms while embracing contemporary digital storytelling.
 
 **What makes Omar unique:**
 - Bilingual poet writing in both Arabic and English, navigating two poetic traditions

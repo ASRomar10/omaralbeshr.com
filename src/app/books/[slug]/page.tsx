@@ -45,8 +45,33 @@ export default async function BookDetailPage({ params }: { params: { slug: strin
   // Fetch book content (blocks) for rendering excerpts, reviews, etc.
   const blocks = await getBookContent(book.id);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Book',
+    name: book.title,
+    author: {
+      '@type': 'Person',
+      name: 'Omar AlBeshr',
+      url: 'https://omaralbeshr.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: book.publisher,
+    },
+    datePublished: book.publishDate,
+    description: book.description,
+    image: book.cover,
+    genre: book.genre,
+    inLanguage: ['ar', 'en'],
+  };
+
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="max-w-6xl mx-auto px-6 py-16">
       {/* Back to Books */}
       <Link
         href="/books"
@@ -151,6 +176,6 @@ export default async function BookDetailPage({ params }: { params: { slug: strin
           Explore More Books
         </Link>
       </div>
-    </div>
+    </>
   );
 }
