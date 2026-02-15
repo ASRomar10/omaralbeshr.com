@@ -15,25 +15,30 @@ export async function getBooks(): Promise<Book[]> {
     return [];
   }
 
-  const response = await notion.dataSources.query({
-    data_source_id: BOOKS_DB_ID,
-    filter: {
-      property: 'Published',
-      checkbox: {
-        equals: true,
+  try {
+    const response = await notion.dataSources.query({
+      data_source_id: BOOKS_DB_ID,
+      filter: {
+        property: 'Published',
+        checkbox: {
+          equals: true,
+        },
       },
-    },
-    sorts: [
-      {
-        property: 'SortOrder',
-        direction: 'ascending',
-      },
-    ],
-  });
+      sorts: [
+        {
+          property: 'SortOrder',
+          direction: 'ascending',
+        },
+      ],
+    });
 
-  return response.results
-    .filter((page): page is PageObjectResponse => 'properties' in page)
-    .map(pageToBook);
+    return response.results
+      .filter((page): page is PageObjectResponse => 'properties' in page)
+      .map(pageToBook);
+  } catch (error) {
+    console.error('Error fetching books from Notion:', error);
+    return [];
+  }
 }
 
 // Fetch a single book by slug
@@ -82,35 +87,40 @@ export async function getFeaturedBooks(): Promise<Book[]> {
     return [];
   }
 
-  const response = await notion.dataSources.query({
-    data_source_id: BOOKS_DB_ID,
-    filter: {
-      and: [
-        {
-          property: 'Published',
-          checkbox: {
-            equals: true,
+  try {
+    const response = await notion.dataSources.query({
+      data_source_id: BOOKS_DB_ID,
+      filter: {
+        and: [
+          {
+            property: 'Published',
+            checkbox: {
+              equals: true,
+            },
           },
-        },
-        {
-          property: 'Featured',
-          checkbox: {
-            equals: true,
+          {
+            property: 'Featured',
+            checkbox: {
+              equals: true,
+            },
           },
+        ],
+      },
+      sorts: [
+        {
+          property: 'SortOrder',
+          direction: 'ascending',
         },
       ],
-    },
-    sorts: [
-      {
-        property: 'SortOrder',
-        direction: 'ascending',
-      },
-    ],
-  });
+    });
 
-  return response.results
-    .filter((page): page is PageObjectResponse => 'properties' in page)
-    .map(pageToBook);
+    return response.results
+      .filter((page): page is PageObjectResponse => 'properties' in page)
+      .map(pageToBook);
+  } catch (error) {
+    console.error('Error fetching featured books from Notion:', error);
+    return [];
+  }
 }
 
 // Fetch all published blog posts with pagination
@@ -120,26 +130,31 @@ export async function getBlogPosts(limit?: number): Promise<BlogPost[]> {
     return [];
   }
 
-  const response = await notion.dataSources.query({
-    data_source_id: BLOG_DB_ID,
-    filter: {
-      property: 'Published',
-      checkbox: {
-        equals: true,
+  try {
+    const response = await notion.dataSources.query({
+      data_source_id: BLOG_DB_ID,
+      filter: {
+        property: 'Published',
+        checkbox: {
+          equals: true,
+        },
       },
-    },
-    sorts: [
-      {
-        property: 'PublishDate',
-        direction: 'descending',
-      },
-    ],
-    page_size: limit || 100,
-  });
+      sorts: [
+        {
+          property: 'PublishDate',
+          direction: 'descending',
+        },
+      ],
+      page_size: limit || 100,
+    });
 
-  return response.results
-    .filter((page): page is PageObjectResponse => 'properties' in page)
-    .map(pageToBlogPost);
+    return response.results
+      .filter((page): page is PageObjectResponse => 'properties' in page)
+      .map(pageToBlogPost);
+  } catch (error) {
+    console.error('Error fetching blog posts from Notion:', error);
+    return [];
+  }
 }
 
 // Fetch recent blog posts (for homepage)
