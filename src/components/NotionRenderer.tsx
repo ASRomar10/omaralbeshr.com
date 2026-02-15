@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Fragment } from 'react';
+import { Fragment, type ReactElement } from 'react';
 
 // Notion block types from the API
 type NotionBlock = {
@@ -120,7 +120,7 @@ export default function NotionRenderer({ blocks }: NotionRendererProps) {
   );
 }
 
-function renderBlock(block: NotionBlock): JSX.Element | null {
+function renderBlock(block: NotionBlock): ReactElement | null {
   const { type, id } = block;
 
   switch (type) {

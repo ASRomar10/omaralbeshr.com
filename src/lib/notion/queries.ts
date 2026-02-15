@@ -3,8 +3,18 @@ import { notion, BOOKS_DB_ID, BLOG_DB_ID } from './client';
 import { Book, BlogPost, pageToBook, pageToBlogPost } from './types';
 import { cacheOptions } from './cache';
 
+// Check if Notion is configured
+const isNotionConfigured = () => {
+  return Boolean(process.env.NOTION_API_KEY && process.env.NOTION_API_KEY.length > 0);
+};
+
 // Fetch all published books, sorted by SortOrder
 export async function getBooks(): Promise<Book[]> {
+  if (!isNotionConfigured()) {
+    console.warn('Notion API not configured, returning empty books array');
+    return [];
+  }
+
   const response = await notion.dataSources.query({
     data_source_id: BOOKS_DB_ID,
     filter: {
@@ -67,6 +77,11 @@ export async function getBookContent(pageId: string) {
 
 // Fetch featured books
 export async function getFeaturedBooks(): Promise<Book[]> {
+  if (!isNotionConfigured()) {
+    console.warn('Notion API not configured, returning empty featured books array');
+    return [];
+  }
+
   const response = await notion.dataSources.query({
     data_source_id: BOOKS_DB_ID,
     filter: {
@@ -100,6 +115,11 @@ export async function getFeaturedBooks(): Promise<Book[]> {
 
 // Fetch all published blog posts with pagination
 export async function getBlogPosts(limit?: number): Promise<BlogPost[]> {
+  if (!isNotionConfigured()) {
+    console.warn('Notion API not configured, returning empty blog posts array');
+    return [];
+  }
+
   const response = await notion.dataSources.query({
     data_source_id: BLOG_DB_ID,
     filter: {
