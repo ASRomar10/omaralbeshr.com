@@ -38,12 +38,12 @@ export default async function BooksPage() {
             >
               {/* Book Cover */}
               {book.cover && (
-                <div className="relative aspect-[3/4] mb-6 overflow-hidden rounded-lg shadow-lg group-hover:shadow-2xl transition-shadow">
+                <div className="relative aspect-[2/3] mb-6 overflow-hidden rounded-lg shadow-lg group-hover:shadow-2xl transition-shadow bg-omar-charcoal/5">
                   <Image
                     src={book.cover}
                     alt={book.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>

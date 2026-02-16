@@ -99,12 +99,12 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
       <div className="grid md:grid-cols-2 gap-12 mb-16">
         {/* Book Cover */}
         {book.cover && (
-          <div className="relative aspect-[3/4] max-w-md mx-auto md:mx-0">
+          <div className="relative aspect-[2/3] max-w-md mx-auto md:mx-0">
             <Image
               src={book.cover}
               alt={book.title}
               fill
-              className="object-cover rounded-lg shadow-2xl"
+              className="object-contain rounded-lg shadow-2xl"
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />

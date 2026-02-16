@@ -81,15 +81,21 @@ export function getFiles(property: any): string | undefined {
   return file.type === 'external' ? file.external.url : file.file.url;
 }
 
+// Local cover images (reliable, no expiring URLs)
+const LOCAL_COVERS: Record<string, string> = {
+  taintlessness: '/images/taintlessness-cover.png',
+};
+
 // Convert Notion page to Book
 export function pageToBook(page: PageObjectResponse): Book {
   const props = page.properties;
+  const slug = getPlainText(props.Slug);
 
   return {
     id: page.id,
     title: getPlainText(props.Title),
-    slug: getPlainText(props.Slug),
-    cover: getFiles(props.Cover),
+    slug,
+    cover: LOCAL_COVERS[slug] || getFiles(props.Cover),
     description: getPlainText(props.Description),
     publishDate: getDate(props.PublishDate),
     publisher: getPlainText(props.Publisher),
@@ -102,15 +108,22 @@ export function pageToBook(page: PageObjectResponse): Book {
   };
 }
 
+// Local blog cover images
+const LOCAL_BLOG_COVERS: Record<string, string> = {
+  'journey-through-land-of-poetry': '/images/blog/poetry-interview.jpg',
+  'writing-poetry-in-second-language': '/images/blog/writing-poetry.png',
+};
+
 // Convert Notion page to BlogPost
 export function pageToBlogPost(page: PageObjectResponse): BlogPost {
   const props = page.properties;
+  const slug = getPlainText(props.Slug);
 
   return {
     id: page.id,
     title: getPlainText(props.Title),
-    slug: getPlainText(props.Slug),
-    coverImage: getFiles(props.CoverImage),
+    slug,
+    coverImage: LOCAL_BLOG_COVERS[slug] || getFiles(props.CoverImage),
     excerpt: getPlainText(props.Excerpt),
     publishDate: getDate(props.PublishDate),
     tags: getMultiSelect(props.Tags),
