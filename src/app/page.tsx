@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: 'Omar AlBeshr — Poet & Author',
     description: 'Emirati poet and author based in Abu Dhabi. Writing in Arabic and English.',
     type: 'website',
+    images: [{ url: '/images/omar-portrait.jpeg', width: 256, height: 256, alt: 'Omar AlBeshr — Poet & Author' }],
   },
 };
 
