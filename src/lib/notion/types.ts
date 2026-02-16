@@ -11,6 +11,7 @@ export interface Book {
   publisher: string;
   amazonUrl?: string;
   otherBuyLinks?: string;
+  isbn?: string;
   genre: string;
   published: boolean;
   featured: boolean;
@@ -86,6 +87,11 @@ const LOCAL_COVERS: Record<string, string> = {
   taintlessness: '/images/taintlessness-cover.png',
 };
 
+// ISBNs for published books
+const BOOK_ISBNS: Record<string, string> = {
+  taintlessness: '978-9948-25-243-6',
+};
+
 // Convert Notion page to Book
 export function pageToBook(page: PageObjectResponse): Book {
   const props = page.properties;
@@ -96,6 +102,7 @@ export function pageToBook(page: PageObjectResponse): Book {
     title: getPlainText(props.Title),
     slug,
     cover: LOCAL_COVERS[slug] || getFiles(props.Cover),
+    isbn: BOOK_ISBNS[slug],
     description: getPlainText(props.Description),
     publishDate: getDate(props.PublishDate),
     publisher: getPlainText(props.Publisher),

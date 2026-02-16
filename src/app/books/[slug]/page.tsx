@@ -51,6 +51,7 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
     '@context': 'https://schema.org',
     '@type': 'Book',
     name: book.title,
+    isbn: book.isbn,
     author: {
       '@type': 'Person',
       name: 'Omar AlBeshr',
@@ -125,6 +126,9 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
             </p>
             {book.genre && (
               <p className="text-omar-sand font-medium mt-2">{book.genre}</p>
+            )}
+            {book.isbn && (
+              <p className="text-sm text-omar-muted mt-1">ISBN: {book.isbn}</p>
             )}
           </div>
 

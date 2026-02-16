@@ -193,10 +193,17 @@ export default function AboutPage() {
               >
                 <span>Instagram</span>
               </a>
+              <a
+                href="mailto:admin@omaralbeshr.com"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-omar-sand text-white font-body rounded-lg hover:bg-omar-oud transition-colors"
+              >
+                <span>Contact Me</span>
+              </a>
             </div>
 
             <p className="font-body text-omar-charcoal/70 mt-8 max-w-2xl mx-auto">
               I welcome opportunities to collaborate, discuss creative work, or simply connect with fellow storytellers and artists.
+              Feel free to reach out at <a href="mailto:admin@omaralbeshr.com" className="text-omar-sand hover:text-omar-oud transition-colors underline">admin@omaralbeshr.com</a>.
             </p>
           </div>
         </section>
