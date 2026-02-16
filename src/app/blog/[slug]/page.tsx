@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: post.title,
       description: post.excerpt,
       type: 'article',
-      images: post.coverImage ? [post.coverImage] : [],
+      images: post.coverImage ? [post.coverImage] : ['/images/omar-portrait.jpeg'],
     },
   };
 }
