@@ -6,7 +6,7 @@ export const revalidate = 3600; // Revalidate every hour
 
 export const metadata = {
   title: 'Blog',
-  description: 'Reflections on writing, creativity, and the human experience by Omar AlBeshr. Thoughts on poetry, language, and bridging Arabic and English literary traditions.',
+  description: 'Reflections on writing, creativity, and the human experience by Omar AlBeshr. Thoughts on poetry, language, and bridging Arabic and English traditions.',
   alternates: { canonical: '/blog' },
 };
 
