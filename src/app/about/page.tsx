@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About — Omar AlBeshr',
     description: 'Omar AlBeshr is an Emirati poet and author based in Abu Dhabi.',
+    siteName: 'Omar AlBeshr',
+    locale: 'en_US',
     images: [{ url: '/images/omar-portrait.jpeg', width: 256, height: 256, alt: 'Omar AlBeshr' }],
   },
 }

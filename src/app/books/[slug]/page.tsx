@@ -32,6 +32,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: book.title,
       description: book.description,
+      siteName: 'Omar AlBeshr',
+      locale: 'en_US',
       images: book.cover ? [book.cover] : [],
     },
   };
@@ -188,11 +190,12 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
 
       {/* Book Content (Notion blocks: excerpts, reviews, themes, etc.) */}
       {blocks.length > 0 && (
-        <div className="max-w-4xl mx-auto">
+        <section className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-3xl md:text-4xl text-omar-oud mb-8">About This Book</h2>
           <div className="prose prose-lg max-w-none">
             <NotionRenderer blocks={blocks as any} />
           </div>
-        </div>
+        </section>
       )}
 
       {/* Back to Books Footer */}

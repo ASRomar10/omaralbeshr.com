@@ -33,6 +33,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: post.title,
       description: post.excerpt,
       type: 'article',
+      siteName: 'Omar AlBeshr',
+      locale: 'en_US',
       publishedTime: post.publishDate,
       images: post.coverImage ? [post.coverImage] : ['/images/omar-portrait.jpeg'],
     },
@@ -155,9 +157,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </header>
 
       {/* Post Content */}
-      <div className="prose prose-lg max-w-none">
-        <NotionRenderer blocks={blocks as any} />
-      </div>
+      <section>
+        <h2 className="sr-only">Article Content</h2>
+        <div className="prose prose-lg max-w-none">
+          <NotionRenderer blocks={blocks as any} />
+        </div>
+      </section>
 
       {/* Post Footer */}
       <footer className="mt-16 pt-8 border-t border-omar-muted/30">
