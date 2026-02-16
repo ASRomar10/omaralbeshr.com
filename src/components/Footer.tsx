@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           {/* Brand Section */}
           <div>
-            <h3 className="font-heading text-xl text-omar-oud mb-3">
+            <p className="font-heading text-xl text-omar-oud mb-3">
               Omar AlBeshr
-            </h3>
+            </p>
             <p className="text-omar-muted text-sm leading-relaxed">
               Stories across languages, frames, and forms
             </p>
@@ -19,9 +19,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-omar-charcoal mb-3">
+            <p className="font-semibold text-omar-charcoal mb-3">
               Explore
-            </h4>
+            </p>
             <nav className="flex flex-col gap-2">
               <Link
                 href="/books"
@@ -46,9 +46,9 @@ export default function Footer() {
 
           {/* Connect Section */}
           <div>
-            <h4 className="font-semibold text-omar-charcoal mb-3">
+            <p className="font-semibold text-omar-charcoal mb-3">
               Connect
-            </h4>
+            </p>
             <div className="flex flex-col gap-2">
               <a
                 href="mailto:admin@omaralbeshr.com"

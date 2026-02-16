@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: book.title,
       description: book.description,
+      type: 'book',
       siteName: 'Omar AlBeshr',
       locale: 'en_US',
       images: book.cover ? [book.cover] : [],
