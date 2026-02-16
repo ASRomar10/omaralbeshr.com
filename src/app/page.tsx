@@ -53,13 +53,13 @@ export default async function Home() {
             Omar AlBeshr
           </h1>
           <p className="text-xl md:text-2xl text-omar-muted mb-12">
-            Stories across languages, frames, and forms
+            Emirati poet writing at the crossroads of Arabic and English
           </p>
           <Link
-            href="/books"
+            href="/books/taintlessness"
             className="inline-block px-8 py-3 bg-omar-sand text-white font-medium rounded-md hover:bg-omar-oud transition-colors"
           >
-            Explore My Work
+            Read My Debut Collection
           </Link>
         </div>
       </section>

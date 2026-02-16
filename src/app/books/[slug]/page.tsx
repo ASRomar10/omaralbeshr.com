@@ -139,9 +139,9 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
                 month: 'long',
               })}` : ''}
             </p>
-            {book.genre && (
-              <p className="text-omar-sand font-medium mt-2">{book.genre}</p>
-            )}
+            <p className="text-omar-sand font-medium mt-2">
+              {[book.genre, '90 pages', 'Paperback'].filter(Boolean).join(' · ')}
+            </p>
             {book.isbn && (
               <p className="text-sm text-omar-muted mt-1">ISBN: {book.isbn}</p>
             )}
@@ -153,25 +153,30 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
             </p>
           </div>
 
+          {/* Price */}
+          <p className="text-lg font-medium text-omar-oud">
+            $15 USD <span className="text-omar-muted font-normal">/ ~55 AED</span>
+          </p>
+
           {/* Purchase Links */}
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-2">
             {book.amazonUrl && (
               <>
-                <a
-                  href={book.amazonUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-8 py-3 bg-omar-sand text-white font-medium rounded-md hover:bg-omar-oud transition-colors"
-                >
-                  Buy on Amazon
-                </a>
                 <a
                   href={book.amazonUrl.replace('amazon.com', 'amazon.ae')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-8 py-3 bg-omar-sand text-white font-medium rounded-md hover:bg-omar-oud transition-colors"
                 >
-                  Buy on Amazon.ae
+                  Order in UAE — Amazon.ae
+                </a>
+                <a
+                  href={book.amazonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-8 py-3 border-2 border-omar-sand text-omar-sand font-medium rounded-md hover:bg-omar-sand hover:text-white transition-colors"
+                >
+                  Order on Amazon (US/Intl)
                 </a>
               </>
             )}
@@ -182,7 +187,7 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-3 border-2 border-omar-sand text-omar-sand font-medium rounded-md hover:bg-omar-sand hover:text-white transition-colors"
               >
-                Buy from Sail Publishing
+                Buy Direct from Publisher
               </a>
             )}
           </div>

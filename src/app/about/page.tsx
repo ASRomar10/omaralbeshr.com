@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -98,6 +99,21 @@ export default function AboutPage() {
                 Based in the cultural heart of the UAE, Omar continues to develop his craft, seeking always to create work that resonates with authenticity and purpose.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Book CTA */}
+        <section className="py-12 bg-omar-sand/5">
+          <div className="container mx-auto px-6 max-w-3xl text-center">
+            <p className="font-body text-lg text-omar-charcoal mb-6">
+              Read Omar's debut poetry collection
+            </p>
+            <Link
+              href="/books/taintlessness"
+              className="inline-block px-8 py-3 bg-omar-sand text-white font-medium rounded-md hover:bg-omar-oud transition-colors"
+            >
+              Discover Taintlessness
+            </Link>
           </div>
         </section>
 
