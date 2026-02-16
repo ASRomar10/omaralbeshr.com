@@ -51,6 +51,12 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-2">
               <a
+                href="mailto:admin@omaralbeshr.com"
+                className="text-omar-sand hover:text-omar-oud transition-colors text-sm font-medium"
+              >
+                admin@omaralbeshr.com
+              </a>
+              <a
                 href="https://www.linkedin.com/in/omaralbeshr"
                 target="_blank"
                 rel="noopener noreferrer"
