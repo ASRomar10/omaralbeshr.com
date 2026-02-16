@@ -69,6 +69,7 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
     description: book.description,
     image: bookImage,
     ...(book.genre ? { genre: book.genre } : {}),
+    numberOfPages: 90,
     inLanguage: 'ar',
     offers: {
       '@type': 'Offer',
@@ -114,7 +115,7 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
           <div className="relative aspect-[2/3] max-w-md mx-auto md:mx-0">
             <Image
               src={book.cover}
-              alt={book.title}
+              alt={`Cover of ${book.title} by Omar AlBeshr`}
               fill
               className="object-contain rounded-lg shadow-2xl"
               sizes="(max-width: 768px) 100vw, 50vw"

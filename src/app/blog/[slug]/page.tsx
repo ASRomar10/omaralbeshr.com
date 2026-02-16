@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: post.title,
       description: post.excerpt,
       type: 'article',
+      publishedTime: post.publishDate,
       images: post.coverImage ? [post.coverImage] : ['/images/omar-portrait.jpeg'],
     },
   };
@@ -61,7 +62,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     url: postUrl,
     inLanguage: 'en',
     datePublished: post.publishDate,
-    dateModified: post.publishDate,
     author: {
       '@id': 'https://omaralbeshr.com/#person',
     },
@@ -144,7 +144,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="relative aspect-[16/9] rounded-lg overflow-hidden shadow-xl mb-8">
             <Image
               src={post.coverImage}
-              alt={post.title}
+              alt={`Featured image for ${post.title}`}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 900px"

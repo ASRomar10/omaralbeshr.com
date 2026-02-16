@@ -74,7 +74,7 @@ export default async function Home() {
               <div className="relative aspect-[3/4] max-w-sm mx-auto">
                 <Image
                   src={featuredBook.cover}
-                  alt={featuredBook.title}
+                  alt={`Cover of ${featuredBook.title} by Omar AlBeshr`}
                   fill
                   className="object-cover rounded-lg shadow-2xl"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -139,7 +139,7 @@ export default async function Home() {
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image
                       src={post.coverImage}
-                      alt={post.title}
+                      alt={`Featured image for ${post.title}`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, 33vw"

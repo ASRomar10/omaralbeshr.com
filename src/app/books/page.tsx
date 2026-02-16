@@ -42,7 +42,7 @@ export default async function BooksPage() {
                 <div className="relative aspect-[2/3] mb-6 overflow-hidden rounded-lg shadow-lg group-hover:shadow-2xl transition-shadow bg-omar-charcoal/5">
                   <Image
                     src={book.cover}
-                    alt={book.title}
+                    alt={`Cover of ${book.title} by Omar AlBeshr`}
                     fill
                     className="object-contain group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

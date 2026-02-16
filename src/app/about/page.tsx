@@ -53,7 +53,7 @@ export default function AboutPage() {
                 <div className="w-full h-full rounded-full bg-omar-sand/20 border-4 border-omar-sand overflow-hidden">
                   <Image
                     src="/images/omar-portrait.jpeg"
-                    alt="Omar AlBeshr"
+                    alt="Portrait of Omar AlBeshr, Emirati poet and author"
                     width={256}
                     height={256}
                     className="w-full h-full object-cover object-[center_15%]"

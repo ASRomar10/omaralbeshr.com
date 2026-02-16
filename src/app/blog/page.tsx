@@ -18,7 +18,7 @@ export default async function BlogPage() {
       {/* Hero Section */}
       <div className="text-center mb-16">
         <h1 className="font-heading text-4xl md:text-5xl text-omar-oud mb-6">
-          Reflections
+          Blog
         </h1>
         <p className="text-lg md:text-xl text-omar-muted max-w-2xl mx-auto">
           Thoughts on writing, creativity, and the journey of bringing words to life
@@ -43,7 +43,7 @@ export default async function BlogPage() {
                 >
                   <Image
                     src={post.coverImage}
-                    alt={post.title}
+                    alt={`Featured image for ${post.title}`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, 300px"
