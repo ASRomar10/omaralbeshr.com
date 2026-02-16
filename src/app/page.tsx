@@ -6,11 +6,11 @@ import type { Metadata } from 'next';
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
-  title: 'Omar AlBeshr — Author & Photographer',
-  description: 'Omar AlBeshr is an Emirati author and photographer based in Abu Dhabi. Writing in Arabic and English, exploring themes of love, healing, and human connection.',
+  title: 'Omar AlBeshr — Poet & Author',
+  description: 'Omar AlBeshr is an Emirati poet and author based in Abu Dhabi. Writing in Arabic and English, exploring themes of love, healing, and human connection.',
   openGraph: {
-    title: 'Omar AlBeshr — Author & Photographer',
-    description: 'Emirati author and photographer based in Abu Dhabi. Writing in Arabic and English.',
+    title: 'Omar AlBeshr — Poet & Author',
+    description: 'Emirati poet and author based in Abu Dhabi. Writing in Arabic and English.',
     type: 'website',
   },
 };
@@ -29,7 +29,7 @@ export default async function Home() {
     '@type': 'WebSite',
     name: 'Omar AlBeshr',
     url: 'https://omaralbeshr.com',
-    description: 'Emirati author and photographer based in Abu Dhabi',
+    description: 'Emirati poet and author based in Abu Dhabi',
     author: {
       '@type': 'Person',
       name: 'Omar AlBeshr',
@@ -181,9 +181,9 @@ export default async function Home() {
       {/* About Teaser */}
       <section className="max-w-4xl mx-auto px-6 py-16 text-center">
         <p className="text-lg md:text-xl text-omar-charcoal leading-relaxed mb-8">
-          Omar AlBeshr is an Emirati author and photographer based in Abu Dhabi.
+          Omar AlBeshr is an Emirati poet and author based in Abu Dhabi.
           He writes in both Arabic and English, exploring themes of love, healing, and human
-          connection through poetry and visual narratives. His work bridges cultures
+          connection through poetry and prose. His work bridges cultures
           and traditions, contributing a contemporary Gulf voice to global literary conversations.
         </p>
         <Link

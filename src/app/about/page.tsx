@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About — Omar AlBeshr',
-  description: 'Omar AlBeshr is an Emirati author and photographer based in Abu Dhabi. Published author of "Taintlessness" working in Arabic and English.',
+  description: 'Omar AlBeshr is an Emirati poet and author based in Abu Dhabi. Published author of "Taintlessness" working in Arabic and English.',
   openGraph: {
     title: 'About — Omar AlBeshr',
-    description: 'Omar AlBeshr is an Emirati author and photographer based in Abu Dhabi.',
+    description: 'Omar AlBeshr is an Emirati poet and author based in Abu Dhabi.',
   },
 }
 
@@ -16,8 +16,8 @@ export default function AboutPage() {
     '@type': 'Person',
     name: 'Omar AlBeshr',
     url: 'https://omaralbeshr.com',
-    jobTitle: 'Author & Photographer',
-    description: 'Emirati author and photographer based in Abu Dhabi',
+    jobTitle: 'Poet & Author',
+    description: 'Emirati poet and author based in Abu Dhabi',
     sameAs: [
       'https://www.linkedin.com/in/omaralbeshr',
       'https://x.com/ASRomar10',
@@ -57,7 +57,7 @@ export default function AboutPage() {
                   About Omar
                 </h1>
                 <p className="font-body text-xl text-omar-charcoal/70">
-                  Author & Photographer
+                  Poet & Author
                 </p>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function AboutPage() {
           <div className="container mx-auto px-6 max-w-3xl">
             <div className="prose prose-lg max-w-none">
               <p className="font-body text-lg text-omar-charcoal leading-relaxed mb-6">
-                Omar AlBeshr is an Emirati author and photographer based in Abu Dhabi. His creative practice spans writing and visual storytelling, unified by a commitment to exploring the human experience.
+                Omar AlBeshr is an Emirati poet and author based in Abu Dhabi. His creative practice spans poetry and prose, unified by a commitment to exploring the human experience.
               </p>
 
               <p className="font-body text-lg text-omar-charcoal leading-relaxed mb-6">
@@ -77,11 +77,11 @@ export default function AboutPage() {
               </p>
 
               <p className="font-body text-lg text-omar-charcoal leading-relaxed mb-6">
-                Working fluently in both Arabic and English, Omar brings a bilingual perspective to his creative output. His photography captures moments that reveal the quiet beauty found in everyday life.
+                Working fluently in both Arabic and English, Omar brings a bilingual perspective to his creative output. His writing captures moments that reveal the quiet beauty found in everyday life.
               </p>
 
               <p className="font-body text-lg text-omar-charcoal leading-relaxed">
-                Based in the cultural heart of the UAE, Omar continues to develop his craft across writing and photography, seeking always to create work that resonates with authenticity and purpose.
+                Based in the cultural heart of the UAE, Omar continues to develop his craft, seeking always to create work that resonates with authenticity and purpose.
               </p>
             </div>
           </div>
