@@ -59,9 +59,7 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
     isbn: book.isbn,
     bookFormat: 'https://schema.org/Paperback',
     author: {
-      '@type': 'Person',
-      name: 'Omar AlBeshr',
-      url: 'https://omaralbeshr.com/about',
+      '@id': 'https://omaralbeshr.com/#person',
     },
     publisher: {
       '@type': 'Organization',
@@ -70,12 +68,14 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
     datePublished: book.publishDate,
     description: book.description,
     image: bookImage,
-    genre: book.genre,
-    inLanguage: ['ar', 'en'],
+    ...(book.genre ? { genre: book.genre } : {}),
+    inLanguage: 'ar',
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
       url: book.amazonUrl || bookUrl,
+      price: '15.00',
+      priceCurrency: 'USD',
     },
   };
 

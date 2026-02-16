@@ -16,6 +16,7 @@ export default function AboutPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': 'https://omaralbeshr.com/#person',
     name: 'Omar AlBeshr',
     alternateName: 'عمر البشر',
     url: 'https://omaralbeshr.com',

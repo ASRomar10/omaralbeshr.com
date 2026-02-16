@@ -115,8 +115,9 @@ export function pageToBook(page: PageObjectResponse): Book {
   };
 }
 
-// Local blog cover images
+// Local blog cover images (fallback for expiring Notion URLs)
 const LOCAL_BLOG_COVERS: Record<string, string> = {
+  'journey-through-homes': '/images/omar-portrait.jpeg',
   'journey-through-land-of-poetry': '/images/blog/poetry-interview.jpg',
   'writing-poetry-in-second-language': '/images/blog/writing-poetry.png',
 };

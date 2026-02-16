@@ -63,9 +63,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     datePublished: post.publishDate,
     dateModified: post.publishDate,
     author: {
-      '@type': 'Person',
-      name: 'Omar AlBeshr',
-      url: 'https://omaralbeshr.com/about',
+      '@id': 'https://omaralbeshr.com/#person',
     },
     publisher: {
       '@type': 'Organization',
