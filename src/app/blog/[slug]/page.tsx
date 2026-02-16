@@ -21,16 +21,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!post) {
     return {
-      title: 'Post Not Found | Omar AlBeshr',
+      title: 'Post Not Found',
     };
   }
 
   return {
-    title: `${post.title} | Omar AlBeshr`,
+    title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      type: 'article',
       images: post.coverImage ? [post.coverImage] : [],
     },
   };
@@ -66,8 +68,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       url: 'https://omaralbeshr.com/about',
     },
     publisher: {
-      '@type': 'Person',
+      '@type': 'Organization',
       name: 'Omar AlBeshr',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://omaralbeshr.com/images/logo-bird.png',
+      },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',

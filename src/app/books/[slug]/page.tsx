@@ -21,13 +21,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!book) {
     return {
-      title: 'Book Not Found | Omar AlBeshr',
+      title: 'Book Not Found',
     };
   }
 
   return {
-    title: `${book.title} | Omar AlBeshr`,
+    title: book.title,
     description: book.description,
+    alternates: { canonical: `/books/${slug}` },
     openGraph: {
       title: book.title,
       description: book.description,

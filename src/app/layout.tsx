@@ -26,10 +26,19 @@ export const metadata: Metadata = {
     siteName: 'Omar AlBeshr',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/images/omar-portrait.jpeg',
+        width: 256,
+        height: 256,
+        alt: 'Omar AlBeshr — Poet & Author',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     creator: '@ASRomar10',
+    images: ['/images/omar-portrait.jpeg'],
   },
 };
 

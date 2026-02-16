@@ -5,8 +5,9 @@ import { getBlogPosts } from '@/lib/notion';
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata = {
-  title: 'Blog | Omar AlBeshr',
-  description: 'Reflections on writing, creativity, and the human experience',
+  title: 'Blog',
+  description: 'Reflections on writing, creativity, and the human experience by Omar AlBeshr. Thoughts on poetry, language, and bridging Arabic and English literary traditions.',
+  alternates: { canonical: '/blog' },
 };
 
 export default async function BlogPage() {

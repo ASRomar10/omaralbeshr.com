@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'About — Omar AlBeshr',
+  title: 'About',
   description: 'Omar AlBeshr is an Emirati poet and author based in Abu Dhabi. Published author of "Taintlessness" working in Arabic and English.',
+  alternates: { canonical: '/about' },
   openGraph: {
     title: 'About — Omar AlBeshr',
     description: 'Omar AlBeshr is an Emirati poet and author based in Abu Dhabi.',

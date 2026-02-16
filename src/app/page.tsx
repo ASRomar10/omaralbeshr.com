@@ -6,8 +6,9 @@ import type { Metadata } from 'next';
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
-  title: 'Omar AlBeshr — Poet & Author',
+  title: { absolute: 'Omar AlBeshr — Poet & Author' },
   description: 'Omar AlBeshr is an Emirati poet and author based in Abu Dhabi. Writing in Arabic and English, exploring themes of love, healing, and human connection.',
+  alternates: { canonical: '/' },
   openGraph: {
     title: 'Omar AlBeshr — Poet & Author',
     description: 'Emirati poet and author based in Abu Dhabi. Writing in Arabic and English.',

@@ -5,8 +5,9 @@ import { getBooks } from '@/lib/notion';
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata = {
-  title: 'Books | Omar AlBeshr',
-  description: 'Explore poetry collections and literary works by Omar AlBeshr',
+  title: 'Books',
+  description: 'Explore poetry collections and literary works by Omar AlBeshr. Poetry and prose exploring themes of love, healing, and the human experience.',
+  alternates: { canonical: '/books' },
 };
 
 export default async function BooksPage() {
