@@ -178,6 +178,25 @@ export default async function Home() {
         </section>
       )}
 
+      {/* Interview */}
+      <section className="max-w-4xl mx-auto px-6 py-16">
+        <h2 className="font-heading text-3xl md:text-4xl text-omar-oud mb-8 text-center">
+          Interview
+        </h2>
+        <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            src="https://www.youtube.com/embed/rzkN2Q_PLdM?start=5534"
+            title="Omar AlBeshr on صباح الإمارات — Emarat TV"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
+          />
+        </div>
+        <p className="text-omar-muted text-center mt-4">
+          Emarat TV's "Morning of the Emirates" (صباح الإمارات) — May 2023
+        </p>
+      </section>
+
       {/* About Teaser */}
       <section className="max-w-4xl mx-auto px-6 py-16 text-center">
         <p className="text-lg md:text-xl text-omar-charcoal leading-relaxed mb-8">
