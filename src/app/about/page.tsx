@@ -15,9 +15,17 @@ export default function AboutPage() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Omar AlBeshr',
+    alternateName: 'عمر البشر',
     url: 'https://omaralbeshr.com',
+    image: 'https://omaralbeshr.com/images/omar-portrait.jpeg',
     jobTitle: 'Poet & Author',
     description: 'Emirati poet and author based in Abu Dhabi',
+    nationality: {
+      '@type': 'Country',
+      name: 'United Arab Emirates',
+    },
+    knowsLanguage: ['ar', 'en'],
+    mainEntityOfPage: 'https://omaralbeshr.com/about',
     sameAs: [
       'https://www.linkedin.com/in/omaralbeshr',
       'https://x.com/ASRomar10',

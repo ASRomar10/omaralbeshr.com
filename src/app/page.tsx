@@ -33,7 +33,20 @@ export default async function Home() {
     author: {
       '@type': 'Person',
       name: 'Omar AlBeshr',
+      alternateName: 'عمر البشر',
       url: 'https://omaralbeshr.com/about',
+      image: 'https://omaralbeshr.com/images/omar-portrait.jpeg',
+      jobTitle: 'Poet & Author',
+      nationality: {
+        '@type': 'Country',
+        name: 'United Arab Emirates',
+      },
+      knowsLanguage: ['ar', 'en'],
+      sameAs: [
+        'https://www.linkedin.com/in/omaralbeshr',
+        'https://x.com/ASRomar10',
+        'https://www.instagram.com/ASRomar10',
+      ],
     },
   };
 

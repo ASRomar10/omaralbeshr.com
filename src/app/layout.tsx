@@ -16,8 +16,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Omar AlBeshr",
-  description: "Stories across languages, frames, and forms",
+  metadataBase: new URL('https://omaralbeshr.com'),
+  title: {
+    default: 'Omar AlBeshr — Poet & Author',
+    template: '%s | Omar AlBeshr',
+  },
+  description: 'Omar AlBeshr is an Emirati poet and author based in Abu Dhabi. Writing in Arabic and English, exploring themes of love, healing, and human connection.',
+  openGraph: {
+    siteName: 'Omar AlBeshr',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    creator: '@ASRomar10',
+  },
 };
 
 export default function RootLayout({

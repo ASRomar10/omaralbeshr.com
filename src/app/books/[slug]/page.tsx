@@ -47,11 +47,16 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
   // Fetch book content (blocks) for rendering excerpts, reviews, etc.
   const blocks = await getBookContent(book.id);
 
+  const bookUrl = `https://omaralbeshr.com/books/${slug}`;
+  const bookImage = book.cover?.startsWith('http') ? book.cover : `https://omaralbeshr.com${book.cover}`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Book',
     name: book.title,
+    url: bookUrl,
     isbn: book.isbn,
+    bookFormat: 'https://schema.org/Paperback',
     author: {
       '@type': 'Person',
       name: 'Omar AlBeshr',
@@ -63,9 +68,14 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
     },
     datePublished: book.publishDate,
     description: book.description,
-    image: book.cover,
+    image: bookImage,
     genre: book.genre,
     inLanguage: ['ar', 'en'],
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      url: book.amazonUrl || bookUrl,
+    },
   };
 
   return (

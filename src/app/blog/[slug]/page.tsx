@@ -47,12 +47,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   // Fetch post content (blocks) for rendering
   const blocks = await getBlogPostContent(post.id);
 
+  const postUrl = `https://omaralbeshr.com/blog/${post.slug}`;
+  const postImage = post.coverImage?.startsWith('http') ? post.coverImage : (post.coverImage ? `https://omaralbeshr.com${post.coverImage}` : undefined);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
-    image: post.coverImage,
+    image: postImage,
+    url: postUrl,
+    inLanguage: 'en',
     datePublished: post.publishDate,
     dateModified: post.publishDate,
     author: {
@@ -66,7 +71,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://omaralbeshr.com/blog/${post.slug}`,
+      '@id': postUrl,
     },
     keywords: post.tags.join(', '),
   };
