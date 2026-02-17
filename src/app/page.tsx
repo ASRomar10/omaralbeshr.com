@@ -199,6 +199,27 @@ export default async function Home() {
         </p>
       </section>
 
+      {/* Substack Subscribe */}
+      <section className="bg-omar-oud/5 border-y border-omar-muted/20">
+        <div className="max-w-2xl mx-auto px-6 py-16 text-center">
+          <h2 className="font-heading text-3xl md:text-4xl text-omar-oud mb-4">
+            New Poems, Weekly
+          </h2>
+          <p className="text-lg text-omar-charcoal/80 mb-8 leading-relaxed">
+            I share a new poem and a short reflection every week on Substack.
+            Join to follow the journey — from verse to my upcoming novel.
+          </p>
+          <a
+            href="https://substack.com/@omaralbeshr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-omar-sand text-white font-medium rounded-md hover:bg-omar-oud transition-colors"
+          >
+            Subscribe on Substack
+          </a>
+        </div>
+      </section>
+
       {/* About Teaser */}
       <section className="max-w-4xl mx-auto px-6 py-16 text-center">
         <p className="text-lg md:text-xl text-omar-charcoal leading-relaxed mb-8">
