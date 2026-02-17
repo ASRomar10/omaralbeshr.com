@@ -78,8 +78,6 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
       url: book.amazonUrl || bookUrl,
-      price: '15.00',
-      priceCurrency: 'USD',
     },
   };
 
@@ -153,13 +151,8 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
             </p>
           </div>
 
-          {/* Price */}
-          <p className="text-lg font-medium text-omar-oud">
-            $15 USD <span className="text-omar-muted font-normal">/ ~55 AED</span>
-          </p>
-
           {/* Purchase Links */}
-          <div className="flex flex-wrap gap-4 pt-2">
+          <div className="flex flex-wrap gap-4">
             {book.amazonUrl && (
               <>
                 <a
