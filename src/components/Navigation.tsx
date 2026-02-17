@@ -5,10 +5,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from './Logo';
 
-const navLinks = [
+const navLinks: { href: string; label: string; external?: boolean }[] = [
   { href: '/books', label: 'Books' },
   { href: '/articles', label: 'Articles' },
   { href: '/blog', label: 'Blog' },
+  { href: 'https://substack.com/@omaralbeshr', label: 'Substack', external: true },
   { href: '/about', label: 'About' },
 ];
 
@@ -32,19 +33,31 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`transition-colors font-medium ${
-                  pathname.startsWith(href)
-                    ? 'text-omar-sand'
-                    : 'text-omar-charcoal hover:text-omar-sand'
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
+            {navLinks.map(({ href, label, external }) =>
+              external ? (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-omar-charcoal hover:text-omar-sand transition-colors font-medium"
+                >
+                  {label}
+                </a>
+              ) : (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`transition-colors font-medium ${
+                    pathname.startsWith(href)
+                      ? 'text-omar-sand'
+                      : 'text-omar-charcoal hover:text-omar-sand'
+                  }`}
+                >
+                  {label}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobile Hamburger */}
@@ -69,20 +82,33 @@ export default function Navigation() {
         {isOpen && (
           <div className="md:hidden pt-4 pb-2 border-t border-omar-muted/20 mt-4">
             <div className="flex flex-col gap-1">
-              {navLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  onClick={() => setIsOpen(false)}
-                  className={`px-3 py-3 rounded-md transition-colors font-medium ${
-                    pathname.startsWith(href)
-                      ? 'text-omar-sand bg-omar-sand/5'
-                      : 'text-omar-charcoal hover:text-omar-sand hover:bg-omar-sand/5'
-                  }`}
-                >
-                  {label}
-                </Link>
-              ))}
+              {navLinks.map(({ href, label, external }) =>
+                external ? (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="px-3 py-3 rounded-md transition-colors font-medium text-omar-charcoal hover:text-omar-sand hover:bg-omar-sand/5"
+                  >
+                    {label}
+                  </a>
+                ) : (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setIsOpen(false)}
+                    className={`px-3 py-3 rounded-md transition-colors font-medium ${
+                      pathname.startsWith(href)
+                        ? 'text-omar-sand bg-omar-sand/5'
+                        : 'text-omar-charcoal hover:text-omar-sand hover:bg-omar-sand/5'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         )}

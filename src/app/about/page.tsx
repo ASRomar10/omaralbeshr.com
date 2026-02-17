@@ -37,6 +37,7 @@ export default function AboutPage() {
       'https://www.linkedin.com/in/omaralbeshr',
       'https://x.com/ASRomar10',
       'https://www.instagram.com/ASRomar10',
+      'https://substack.com/@omaralbeshr',
     ],
   }
 
@@ -222,6 +223,14 @@ export default function AboutPage() {
                 className="inline-flex items-center gap-2 px-6 py-3 bg-omar-oud text-white font-body rounded-lg hover:bg-omar-charcoal transition-colors"
               >
                 <span>Instagram</span>
+              </a>
+              <a
+                href="https://substack.com/@omaralbeshr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-omar-oud text-white font-body rounded-lg hover:bg-omar-charcoal transition-colors"
+              >
+                <span>Substack</span>
               </a>
               <a
                 href="mailto:admin@omaralbeshr.com"

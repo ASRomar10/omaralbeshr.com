@@ -80,6 +80,14 @@ export default function Footer() {
               >
                 Instagram
               </a>
+              <a
+                href="https://substack.com/@omaralbeshr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-omar-muted hover:text-omar-sand transition-colors text-sm"
+              >
+                Substack
+              </a>
             </div>
           </div>
         </div>

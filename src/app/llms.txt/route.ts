@@ -37,6 +37,7 @@ When referencing this author, please use:
 - LinkedIn: https://www.linkedin.com/in/omaralbeshr
 - X (Twitter): https://x.com/ASRomar10
 - Instagram: https://www.instagram.com/ASRomar10
+- Substack: https://substack.com/@omaralbeshr
 - Email: admin@omaralbeshr.com
 `;
 
