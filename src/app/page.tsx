@@ -203,7 +203,7 @@ export default async function Home() {
       <section className="bg-omar-oud/5 border-y border-omar-muted/20">
         <div className="max-w-2xl mx-auto px-6 py-16 text-center">
           <h2 className="font-heading text-3xl md:text-4xl text-omar-oud mb-4">
-            New Poems, Weekly
+            New Posts, Weekly
           </h2>
           <p className="text-lg text-omar-charcoal/80 mb-8 leading-relaxed">
             I share a new poem and a short reflection every week on Substack.
