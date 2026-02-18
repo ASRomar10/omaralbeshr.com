@@ -11,6 +11,7 @@ const navLinks: { href: string; label: string; external?: boolean }[] = [
   { href: '/blog', label: 'Blog' },
   { href: 'https://substack.com/@omaralbeshr', label: 'Substack', external: true },
   { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Navigation() {
